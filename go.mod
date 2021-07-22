@@ -1,4 +1,4 @@
-module github.com/knoedel/terraform-module-template
+module github.com/knoedel/terraform-tfcloud-bootstrap
 
 go 1.16
 

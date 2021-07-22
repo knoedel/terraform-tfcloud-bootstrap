@@ -1,29 +1,18 @@
-# Terraform Module Template
+# Bootstrapping Terraform Cloud
 
-A repository that acts as a template for Terraform modules.
+This module provisions [Terraform Cloud](https://app.terraform.io/) workspaces that you can use as remote state buckets.
 
-Based on [trussworks/terraform-module-template](https://github.com/trussworks/terraform-module-template).
+You should keep a local state file in the repo that only manages the basic resources for bootstrapping:
 
-## Creating a new Terraform Module
+* Terraform Cloud organization
+* Terraform Cloud production workspace
+* Terraform Cloud sandbox workspace for testing
 
-1. Clone this repo, renaming appropriately.
-1. Write your terraform code in the root dir.
-1. Create an example of the module in use in the `examples` dir.
-1. Ensure you've completed the [Developer Setup](#developer-setup).
-1. In the root dir, run `go mod init MODULE_NAME` to get a new `go.mod` file. Then run `go mod tidy`. This creates a new `go.sum` file and imports the dependencies and checksums specific to your repository.
-1. Run your tests to ensure they work as expected using instructions below.
-
-## Actual readme below  - Delete above here
-
-Please put a description of what this module does here
-
-## Usage
-
-### Put an example usage of the module here
+## Usage for bootstrapping
 
 ```hcl
-module "example" {
-  source = "terraform/registry/path"
+module "bootstrap" {
+  source = "github.com/knoedel/terraform-tfcloud-bootstrap?ref=master"
 
   <variables>
 }
@@ -57,12 +46,45 @@ No inputs.
 No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-## Developer Setup
+## Bootstrapping
 
-Install dependencies (macOS)
+Create a new directory in your Terraform config repository, e.g. `terraform/org-root/bootstrap`.
+
+Add a `bootstrap/main.tf` file as described in [the example above](#usage-for-bootstrapping).
+Make sure that the required `hashicorp/tfe` provider is available and configured:
+
+```hcl
+terraform {
+  required_providers {
+    tfe = {
+      source = "hashicorp/tfe"
+      version = "~> 0.25"
+    }
+  }
+}
+
+provider "tfe" {
+  token = var.token
+}
+```
+
+Execute terraform to start the bootstrapping process:
 
 ```shell
-brew install pre-commit go terraform terraform-docs
+terraform init && terraform plan
+
+# Make sure the changes are as intended
+terraform apply
+```
+
+A local state file has been generated. Make sure to commit this file to your repository.
+
+## Developer Setup
+
+Install dependencies
+
+```shell
+go mod download
 make ensure_pre_commit
 ```
 

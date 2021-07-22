@@ -4,7 +4,7 @@ set -eu -o pipefail
 
 go_test_output="/tmp/go-test.out"
 
-go test -short -count 1 -v -timeout 90m github.com/knoedel/terraform-module-template/test/... | tee "${go_test_output}"
+go test -short -count 1 -v -timeout 90m github.com/knoedel/terraform-tfcloud-bootstrap/test/... | tee "${go_test_output}"
 
 # Check if we are running tests inside of CircleCI by checking for a $CIRCLECI
 # environment variable. The dash after $CIRCLECI substitutes a null value if
