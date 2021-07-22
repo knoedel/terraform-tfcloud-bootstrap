@@ -24,10 +24,13 @@ module "bootstrap" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | ~> 0.25 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.25.3 |
 
 ## Modules
 
@@ -35,15 +38,29 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [tfe_organization.main](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/organization) | resource |
+| [tfe_workspace.prod](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.sandbox](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_enable_two_factor_auth"></a> [enable\_two\_factor\_auth](#input\_enable\_two\_factor\_auth) | Require two factor authentication for your Terraform Cloud organization? | `bool` | `true` | no |
+| <a name="input_org_email"></a> [org\_email](#input\_org\_email) | The admin email address for your Terraform Cloud organization. | `string` | n/a | yes |
+| <a name="input_org_name"></a> [org\_name](#input\_org\_name) | The name of your Terraform Cloud organization. Must be globally unique. | `string` | n/a | yes |
+| <a name="input_tf_version_prod"></a> [tf\_version\_prod](#input\_tf\_version\_prod) | The Terraform version for the production workspace. | `string` | `"1.0.0"` | no |
+| <a name="input_tf_version_sandbox"></a> [tf\_version\_sandbox](#input\_tf\_version\_sandbox) | The Terraform version for the sandbox workspace. | `string` | `"1.0.0"` | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_organization_id"></a> [organization\_id](#output\_organization\_id) | The id of your Terraform Cloud organization |
+| <a name="output_workspace_id_prod"></a> [workspace\_id\_prod](#output\_workspace\_id\_prod) | The id of your Terraform Cloud production workspace |
+| <a name="output_workspace_id_sandbox"></a> [workspace\_id\_sandbox](#output\_workspace\_id\_sandbox) | The id of your Terraform Cloud sandbox workspace |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Bootstrapping

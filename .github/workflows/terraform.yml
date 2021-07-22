@@ -45,8 +45,8 @@ jobs:
 
       - name: Run Terraform Tests
         run: scripts/make-test
-
-      # TODO is test working?
+        env:
+          TFE_TOKEN: ${{ secrets.TFE_TOKEN_TESTING }}
 
       - name: Bump version and push tag
         id: tag_version
