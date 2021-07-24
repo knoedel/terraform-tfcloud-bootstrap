@@ -41,6 +41,10 @@ No modules.
 | Name | Type |
 |------|------|
 | [tfe_organization.main](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/organization) | resource |
+| [tfe_variable.prod_hetzner_cloud_api_token](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
+| [tfe_variable.prod_hetzner_dns_api_token](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
+| [tfe_variable.sandbox_hetzner_cloud_api_token](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
+| [tfe_variable.sandbox_hetzner_dns_api_token](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_workspace.prod](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.sandbox](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 
@@ -48,6 +52,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_api_token_hetzner_cloud_prod"></a> [api\_token\_hetzner\_cloud\_prod](#input\_api\_token\_hetzner\_cloud\_prod) | API token for accessing the Hetzner Cloud API in production environment | `string` | n/a | yes |
+| <a name="input_api_token_hetzner_cloud_sandbox"></a> [api\_token\_hetzner\_cloud\_sandbox](#input\_api\_token\_hetzner\_cloud\_sandbox) | API token for accessing the Hetzner Cloud API in sandbox environment | `string` | n/a | yes |
+| <a name="input_api_token_hetzner_dns"></a> [api\_token\_hetzner\_dns](#input\_api\_token\_hetzner\_dns) | API token for accessing the Hetzner DNS API | `string` | n/a | yes |
 | <a name="input_enable_two_factor_auth"></a> [enable\_two\_factor\_auth](#input\_enable\_two\_factor\_auth) | Require two factor authentication for your Terraform Cloud organization? | `bool` | `true` | no |
 | <a name="input_org_email"></a> [org\_email](#input\_org\_email) | The admin email address for your Terraform Cloud organization. | `string` | n/a | yes |
 | <a name="input_org_name"></a> [org\_name](#input\_org\_name) | The name of your Terraform Cloud organization. Must be globally unique. | `string` | n/a | yes |

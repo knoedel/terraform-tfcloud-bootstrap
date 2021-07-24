@@ -29,3 +29,21 @@ variable "enable_two_factor_auth" {
   default     = true
   type        = bool
 }
+
+variable "api_token_hetzner_dns" {
+  description = "API token for accessing the Hetzner DNS API"
+  sensitive   = true
+  type        = string
+}
+
+variable "api_token_hetzner_cloud_prod" {
+  description = "API token for accessing the Hetzner Cloud API in production environment"
+  sensitive   = true
+  type        = string
+}
+
+variable "api_token_hetzner_cloud_sandbox" {
+  description = "API token for accessing the Hetzner Cloud API in sandbox environment"
+  sensitive   = true
+  type        = string
+}
