@@ -8,6 +8,9 @@ You should keep a local state file in the repo that only manages the basic resou
 * Terraform Cloud production workspace
 * Terraform Cloud sandbox workspace for testing
 
+Make sure the repository has proper access control, as sensitive data (e.g. api tokens) are stored in plaintext
+within the local state file.
+
 ## Usage for bootstrapping
 
 ```hcl
