@@ -71,7 +71,7 @@ resource "tfe_workspace" "sandbox_infra-global" {
 locals {
   sandbox_workspaces = {
     sandbox_admin-global = tfe_workspace.sandbox_admin-global.id
-    sandbox_infra-global = tfe_workspace.infra_admin-global.id
+    sandbox_infra-global = tfe_workspace.sandbox_infra-global.id
   }
   production_workspaces = {
     infra_admin-global    = tfe_workspace.infra_admin-global.id
