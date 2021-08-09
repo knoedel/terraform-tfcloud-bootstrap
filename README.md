@@ -55,6 +55,7 @@ No modules.
 | [tfe_workspace.org-root_admin-global](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.prod_admin-global](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.sandbox_admin-global](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.sandbox_infra-global](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 
 ## Inputs
 

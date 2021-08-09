@@ -58,11 +58,20 @@ resource "tfe_workspace" "sandbox_admin-global" {
   speculative_enabled = false
 }
 
+resource "tfe_workspace" "sandbox_infra-global" {
+  name                = "infra-global"
+  description         = "${var.org_name} sandbox infra-global infrastructure"
+  organization        = tfe_organization.sandbox.id
+  terraform_version   = var.tf_version_sandbox
+  speculative_enabled = false
+}
+
 // Variables
 
 locals {
   sandbox_workspaces = {
     sandbox_admin-global = tfe_workspace.sandbox_admin-global.id
+    sandbox_infra-global = tfe_workspace.sandbox_infra-global.id
   }
   production_workspaces = {
     infra_admin-global    = tfe_workspace.infra_admin-global.id
