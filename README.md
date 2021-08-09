@@ -43,13 +43,18 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [tfe_organization.main](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/organization) | resource |
+| [tfe_organization.infra](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/organization) | resource |
+| [tfe_organization.org-root](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/organization) | resource |
+| [tfe_organization.prod](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/organization) | resource |
+| [tfe_organization.sandbox](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/organization) | resource |
 | [tfe_variable.prod_hetzner_cloud_api_token](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.prod_hetzner_dns_api_token](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.sandbox_hetzner_cloud_api_token](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.sandbox_hetzner_dns_api_token](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
-| [tfe_workspace.prod](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
-| [tfe_workspace.sandbox](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.infra_admin-global](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.org-root_admin-global](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.prod_admin-global](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.sandbox_admin-global](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 
 ## Inputs
 
@@ -66,11 +71,7 @@ No modules.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_organization_id"></a> [organization\_id](#output\_organization\_id) | The id of your Terraform Cloud organization |
-| <a name="output_workspace_id_prod"></a> [workspace\_id\_prod](#output\_workspace\_id\_prod) | The id of your Terraform Cloud production workspace |
-| <a name="output_workspace_id_sandbox"></a> [workspace\_id\_sandbox](#output\_workspace\_id\_sandbox) | The id of your Terraform Cloud sandbox workspace |
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Bootstrapping

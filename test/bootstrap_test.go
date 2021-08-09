@@ -10,7 +10,7 @@ import (
 // BASIC TERRATEST
 // ---------------------------------------------------------------------------------------------------------------------
 
-func TestTerraformINSERT_NAME_OF_MODULE(t *testing.T) {
+func TestBootstrap(t *testing.T) {
 	t.Parallel()
 
 	terraformOptions := &terraform.Options{
